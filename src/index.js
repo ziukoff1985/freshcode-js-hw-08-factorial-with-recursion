@@ -1,14 +1,13 @@
 'use strict';
 
-function factorial3(n) {
-    if (n < 0) return 0;
-    if (n <= 1) return 1;
-    return n * factorial3(n - 1);
+function calcFactorial(n) {
+    // if (n < 0) return null;
+    if (n === 1 || n === 0) return 1;
+    return n * calcFactorial(n - 1);
 }
 
-console.log(factorial3(5));
-console.log(factorial3(4));
-console.log(factorial3(3));
-console.log(factorial3(-1));
-console.log(factorial3(0));
-console.log(factorial3(4));
+const targetNum = 5;
+
+targetNum < 0 || !Number.isInteger(targetNum)
+    ? console.log(`Factorial can't be calculated for ${targetNum}`)
+    : console.log(`Factorial of ${targetNum} is ${calcFactorial(targetNum)}`);
